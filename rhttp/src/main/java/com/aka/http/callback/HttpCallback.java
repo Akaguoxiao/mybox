@@ -6,7 +6,7 @@ import com.aka.http.helper.ParseHelper;
 /**
  * Http请求回调
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public abstract class HttpCallback<T> extends BaseCallback<T> implements ParseHelper<T> {
 

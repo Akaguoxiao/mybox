@@ -6,7 +6,7 @@ import java.net.URLEncoder;
 /**
  * 请求工具类
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class RequestUtils {
 

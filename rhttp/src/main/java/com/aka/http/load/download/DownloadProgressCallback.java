@@ -4,7 +4,7 @@ package com.aka.http.load.download;
 /**
  * 下载回调接口
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public interface DownloadProgressCallback {
 

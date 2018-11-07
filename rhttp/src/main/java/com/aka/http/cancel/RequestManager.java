@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * Http请求管理接口
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public interface RequestManager<T> {
     /**

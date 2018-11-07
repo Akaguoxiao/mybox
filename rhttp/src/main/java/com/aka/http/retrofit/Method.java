@@ -3,7 +3,7 @@ package com.aka.http.retrofit;
 /**
  * Http请求方式
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public enum Method {
     GET,

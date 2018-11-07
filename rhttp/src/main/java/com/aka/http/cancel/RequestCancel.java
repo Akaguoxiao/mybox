@@ -3,7 +3,7 @@ package com.aka.http.cancel;
 /**
  * 请求取消接口
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public interface RequestCancel {
 

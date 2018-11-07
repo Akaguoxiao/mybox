@@ -11,7 +11,7 @@ import io.reactivex.functions.Function;
 /**
  * http结果处理函数
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class HttpResultFunction<T> implements Function<Throwable, Observable<T>> {
     @Override

@@ -3,7 +3,7 @@ package com.aka.http.helper;
 /**
  * 数据解析helper
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public interface ParseHelper<T> {
     /*解析数据*/

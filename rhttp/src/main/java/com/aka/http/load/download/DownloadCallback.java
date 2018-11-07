@@ -5,7 +5,7 @@ import com.aka.http.model.Download;
 /**
  * 下载回调
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public abstract class DownloadCallback<T extends Download> {
 

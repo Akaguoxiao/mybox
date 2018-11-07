@@ -10,7 +10,7 @@ import io.reactivex.functions.Function;
 /**
  * 服务器结果处理函数
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class ServerResultFunction implements Function<JsonElement, Object> {
     @Override

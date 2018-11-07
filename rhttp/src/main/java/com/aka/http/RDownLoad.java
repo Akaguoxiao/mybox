@@ -34,7 +34,7 @@ import retrofit2.Retrofit;
  * 下载管理类
  * 备注：单例模式 开始下载，暂停下载，暂停全部，移除下载，获取下载列表
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class RDownLoad {
     /*单例模式*/

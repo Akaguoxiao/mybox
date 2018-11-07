@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * 进度回调接口
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public interface UploadProgressCallback {
 

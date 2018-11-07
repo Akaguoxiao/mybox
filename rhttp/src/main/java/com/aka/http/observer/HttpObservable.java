@@ -15,7 +15,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 适用Retrofit网络请求Observable(被监听者)
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class HttpObservable {
 

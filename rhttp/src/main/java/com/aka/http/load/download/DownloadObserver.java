@@ -19,7 +19,7 @@ import io.reactivex.disposables.Disposable;
  * 下载观察者(监听)
  * 备注:在此处监听: 开始下载 、下载错误 、下载完成  等状态
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class DownloadObserver<T extends Download> implements DownloadProgressCallback, Observer<T> {
 

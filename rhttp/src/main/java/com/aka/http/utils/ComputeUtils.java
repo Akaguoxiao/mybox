@@ -7,7 +7,7 @@ import java.io.File;
 /**
  * 计算工具类
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class ComputeUtils {
 

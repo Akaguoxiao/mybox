@@ -35,7 +35,7 @@ import okhttp3.RequestBody;
 /**
  * Http请求类
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class RHttp {
 

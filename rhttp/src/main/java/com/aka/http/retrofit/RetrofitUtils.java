@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Retrofit工具类
  * 获取Retrofit 默认使用OkHttpClient
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class RetrofitUtils {
 

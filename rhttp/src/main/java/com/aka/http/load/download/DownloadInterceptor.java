@@ -9,7 +9,7 @@ import okhttp3.Response;
 /**
  * 通过Interceptor回调监听Response进度
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class DownloadInterceptor implements Interceptor {
 

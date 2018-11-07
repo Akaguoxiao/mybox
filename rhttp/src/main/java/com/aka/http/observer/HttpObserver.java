@@ -19,7 +19,7 @@ import io.reactivex.disposables.Disposable;
  * 4.重写cancel，取消请求
  * 3.重写onNext，移除请求
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public abstract class HttpObserver<T> implements Observer<T>, RequestCancel {
     /*请求标识*/
@@ -74,7 +74,7 @@ public abstract class HttpObserver<T> implements Observer<T>, RequestCancel {
     /**
      * 是否已经处理
      *
-     * @author ZhongDaFeng
+     *  created by aka
      */
     public boolean isDisposed() {
         if (TextUtils.isEmpty(mTag)) {

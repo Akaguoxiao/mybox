@@ -3,7 +3,7 @@ package com.aka.http.exception;
 /**
  * api接口错误/异常统一处理类
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class ApiException extends Exception {
     private int code;//错误码

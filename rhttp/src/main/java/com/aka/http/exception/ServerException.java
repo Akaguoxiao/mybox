@@ -3,7 +3,7 @@ package com.aka.http.exception;
 /**
  * 自定义服务器错误
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class ServerException extends RuntimeException {
     private int code;

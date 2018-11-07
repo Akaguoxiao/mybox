@@ -7,7 +7,7 @@ import com.aka.http.RHttp;
 /**
  * LOG工具类
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class LogUtils {
 
@@ -28,7 +28,7 @@ public class LogUtils {
     /**
      * 开启Log
      *
-     * @author ZhongDaFeng
+     *  created by aka
      */
     public static void openLog(boolean flag) {
         allowD = flag;

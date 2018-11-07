@@ -17,7 +17,7 @@ import okio.Sink;
 /**
  * 上传RequestBody
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class UploadRequestBody extends RequestBody {
 

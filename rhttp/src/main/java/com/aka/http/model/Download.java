@@ -15,7 +15,7 @@ import java.io.Serializable;
  * 下载实体类
  * 备注:用户使用下载类需要继承此类
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 @Table("download")
 public class Download implements Serializable {

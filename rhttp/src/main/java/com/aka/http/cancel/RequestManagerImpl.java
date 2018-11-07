@@ -11,7 +11,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * Http请求管理实现类
  *
- * @author ZhongDaFeng
+ *  created by aka
  */
 public class RequestManagerImpl implements RequestManager<Object> {
 

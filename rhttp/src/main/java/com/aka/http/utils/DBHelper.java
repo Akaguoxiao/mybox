@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * 数据库辅助类
  *
- * @author ZhongDaFeng
+ *  created by aka
  * @https://github.com/litesuits/android-lite-orm
  */
 public class DBHelper {
