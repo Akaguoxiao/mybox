@@ -8,7 +8,6 @@
         <option value="organizeImports" />
         <option value="reformat" />
         <option value="reformatChangedCode" />
-        <option value="missingOverrideAnnotation" />
         <option value="unnecessaryThis" />
       </set>
     </option>

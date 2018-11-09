@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+//开发环境(内网)
+def API_HOST_RELEASE = "\"http://10.0.46.159:8080/mybox//\""
+
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -10,10 +14,21 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    //构建类型
     buildTypes {
         release {
-            minifyEnabled false
+            //不显示Log
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            buildConfigField "boolean", "IS_DEBUG", "false"
+            buildConfigField "String", "API_HOST", "${API_HOST_RELEASE}"
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "IS_DEBUG", "true"
+            buildConfigField "String", "API_HOST", "${API_HOST_RELEASE}"
         }
     }
 }
@@ -22,9 +37,25 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'com.google.android.material:material:1.0.0-alpha1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+    //动态权限
+    implementation 'pub.devrel:easypermissions:2.0.0'
+    //rxlifecycle3
+    implementation 'com.trello.rxlifecycle3:rxlifecycle:3.0.0'
+    implementation 'com.trello.rxlifecycle3:rxlifecycle-components:3.0.0'
+    //butterknife...view依赖注入
+    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
+    //Glide加载图片
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
     implementation project(':rhttp')
     implementation project(':mvp')
 }

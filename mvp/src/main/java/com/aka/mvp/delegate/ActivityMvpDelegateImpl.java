@@ -59,11 +59,6 @@ public class ActivityMvpDelegateImpl<V extends IMvpView, P extends IMvpPresenter
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-
-    }
-
-    @Override
     public void onStart() {
 
     }
@@ -84,7 +79,22 @@ public class ActivityMvpDelegateImpl<V extends IMvpView, P extends IMvpPresenter
     }
 
     @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+
+    }
+
+    @Override
     public void onStop() {
+
+    }
+
+    @Override
+    public void onRestart() {
+
+    }
+
+    @Override
+    public void onContentChanged() {
 
     }
 

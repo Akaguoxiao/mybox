@@ -2,16 +2,13 @@ package com.aka.mvp.delegate;
 
 import android.app.Activity;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.View;
-
 
 import com.aka.mvp.MvpFragment;
 import com.aka.mvp.root.IMvpPresenter;
 import com.aka.mvp.root.IMvpView;
+
+import androidx.annotation.Nullable;
 
 /**
  * Created by Aka on 2018/11/8
@@ -31,7 +28,8 @@ public class FragmentMvpDelegateImpl<V extends IMvpView, P extends IMvpPresenter
      */
     private MvpDelegateCallback<V, P> delegateCallback;
 
-    public FragmentMvpDelegateImpl(MvpFragment<V, P> fragment, MvpDelegateCallback delegateCallback) {
+    public FragmentMvpDelegateImpl(MvpFragment<V, P> fragment, MvpDelegateCallback
+            delegateCallback) {
         if (fragment == null) {
             throw new NullPointerException("Fragment is null!");
         }
@@ -67,7 +65,8 @@ public class FragmentMvpDelegateImpl<V extends IMvpView, P extends IMvpPresenter
         Activity activity = fragment.getActivity();
         if (activity == null) {
             throw new NullPointerException("Activity returned by Fragment.getActivity() is null. " +
-                    "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "Fragment is " + fragment);
+                    "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + ""
+                    + "" + "Fragment is" + " " + fragment);
         }
         return activity;
     }
