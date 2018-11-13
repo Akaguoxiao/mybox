@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Mybox</string>
+    <string name="login">用户登录</string>
+    <string name="net_test">网络请求测试</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_sample">SampleActivity</string>
+    <string name="previous_page">上一页</string>
+    <string name="next_page">下一页</string>
+    <string name="question_mark">\?</string>
+    <string name="dialog_map">        RHttp http = new RHttp.Builder().post()
+                .baseUrl(BASE_URL)
+                .apiUrl(API_MAP_GANK)
+                .addParameter(request)
+                .lifecycle(lifecycle)
+                .build();</string>
+    <string name="api_source_gank">* 本页 Sample 使用的 API 来自 <b>干货集中营</b> gank.io</string>
+    <string name="title_map">介绍</string>
+    <string name="page_init">第1页</string>
+    <string name="page_with_number">第%d页</string>
+    <string name="title_activity_gank">GankActivity</string>
+
 </resources>

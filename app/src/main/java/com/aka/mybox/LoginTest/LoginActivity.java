@@ -76,7 +76,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     }
 
     @Override
-    public <M> void mvpData(String action, M data) {
+    public <M> void mvpShowData(String action, M data) {
         if (data == null) return;
         UserBean bean = (UserBean) data;
         showToast(bean.getUid());

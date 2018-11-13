@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 /**
  * Created by Aka on 2018/11/9
  * 自定义Loading弹窗
+ * 只是示例，可以自定义更好的弹窗
  */
 public class RLoadingDialog extends Dialog {
     public RLoadingDialog(Context context, boolean cancelable) {

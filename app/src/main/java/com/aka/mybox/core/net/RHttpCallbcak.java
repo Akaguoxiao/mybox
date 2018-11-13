@@ -6,7 +6,8 @@ import com.google.gson.JsonElement;
 
 /**
  * Created by Aka on 2018/11/8
- * 根据业务进一步封装
+ * 根据业务进一步封装(模板）
+ * 在具体业务里，根据服务器返回结果格式进行更改，extends HttpCallback<T>
  */
 public abstract class RHttpCallbcak<T> extends HttpCallback<T> {
 

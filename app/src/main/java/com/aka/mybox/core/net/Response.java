@@ -28,8 +28,8 @@ public class Response implements Serializable {
     /**
      * 数据对象/成功返回对象
      */
-    @SerializedName("result")
-    private JsonElement result;
+    @SerializedName("results")
+    private JsonElement results;
 
     /**
      * 是否成功
@@ -42,8 +42,7 @@ public class Response implements Serializable {
 
     @Override
     public String toString() {
-        String response = "[http response]" + "{\"code\": " + code + ",\"msg\":" + msg + "," +
-                "\"result\":" + new Gson().toJson(result) + "}";
+        String response = "[http response]" + "{\"code\": " + code + ",\"msg\":" + msg + "," + "\"result\":" + new Gson().toJson(results) + "}";
         return response;
     }
 
@@ -65,10 +64,10 @@ public class Response implements Serializable {
     }
 
     public JsonElement getResult() {
-        return result;
+        return results;
     }
 
     public void setResult(JsonElement result) {
-        this.result = result;
+        results = result;
     }
 }

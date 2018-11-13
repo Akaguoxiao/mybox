@@ -1,8 +1,8 @@
 package com.aka.mvp;
 
-import androidx.annotation.UiThread;
-
 import com.aka.mvp.root.IMvpView;
+
+import androidx.annotation.UiThread;
 
 /**
  * Created by Aka on 2018/11/8
@@ -29,7 +29,7 @@ public interface MvpView extends IMvpView {
      * @param <M>
      */
     @UiThread
-    <M> void mvpData(String action, M data);
+    <M> void mvpShowData(String action, M data);
 
     /**
      * mvp 错误处理

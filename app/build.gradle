@@ -55,7 +55,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     //Gson
     implementation 'com.google.code.gson:gson:2.8.5'
-
+    //ViewPager指示器，实现联动，自身滚动，支持类型：下划线，三角形，全背景，图片
+    implementation 'com.ruffian.library:RVPIndicator:1.0.6'
     implementation project(':rhttp')
     implementation project(':mvp')
 }

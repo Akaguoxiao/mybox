@@ -9,7 +9,6 @@ import com.aka.mvp.delegate.FragmentMvpDelegateImpl;
 import com.aka.mvp.delegate.MvpDelegateCallback;
 import com.aka.mvp.root.IMvpPresenter;
 import com.aka.mvp.root.IMvpView;
-import com.trello.rxlifecycle3.components.RxFragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,10 +19,10 @@ import androidx.annotation.Nullable;
  * 备注:
  * 1.XXFragment 继承 MvpFragment,当页面存在 Presenter 时，具体 Fragment 需要调用 setPresenter(P... presenter)
  * 2.由于此框架集合了 RxLifecycle 因此本 Fragment 继承自 RxFragment (开发者也可以直接继承 Fragment)
+ * ps:RxFragment暂时不支持最新的androidx.fragment.app.Fragment，所以自己仿造写一个RxFragment
  * 3.支持一个 Fragment 存在多个 Presenter
  */
-public abstract class MvpFragment<V extends IMvpView, P extends IMvpPresenter<V>> extends
-        RxFragment implements IMvpView, MvpDelegateCallback<V, P> {
+public abstract class MvpFragment<V extends IMvpView, P extends IMvpPresenter<V>> extends RRxFragment implements IMvpView, MvpDelegateCallback<V, P> {
 
     protected FragmentMvpDelegate mvpDelegate;
 

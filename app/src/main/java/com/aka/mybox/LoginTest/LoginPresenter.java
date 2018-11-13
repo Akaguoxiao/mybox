@@ -40,7 +40,7 @@ public class LoginPresenter extends MvpPresenter<ILoginView> {
             public void onSuccess(UserBean value) {
                 if (isViewAttached()) {
                     getView().mvpLoading(ACTION_LOGIN, false);
-                    getView().mvpData(ACTION_LOGIN, value);
+                    getView().mvpShowData(ACTION_LOGIN, value);
                 }
             }
 

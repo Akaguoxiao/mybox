@@ -27,6 +27,7 @@ public abstract class BaseFragment extends MvpFragment implements EasyPermission
     protected Unbinder unBinder;
     protected View mView;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
