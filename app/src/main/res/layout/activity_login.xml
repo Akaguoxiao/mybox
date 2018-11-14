@@ -24,11 +24,8 @@
         android:layout_marginTop="100dp"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        android:text="@string/login"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:Height="40dp"
-        app:Width="120dp"
+        app:Height="100dp"
+        app:Width="500dp"
         app:left="@drawable/taiji" />
 
     <LinearLayout
@@ -81,8 +78,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="5px"
-            android:background="@color/color_white" />
+            android:layout_height="1px"
+            android:background="@color/color_cccccc" />
 
         <LinearLayout
             android:focusable="true"
@@ -98,6 +95,7 @@
                 android:layout_height="24dp"
                 android:layout_marginRight="15dp"
                 android:scaleType="fitCenter"
+                android:padding="2dp"
                 android:src="@drawable/ic_password_flag" />
 
             <EditText
@@ -132,8 +130,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10px"
-            android:background="@color/color_white" />
+            android:layout_height="1px"
+            android:background="@color/color_cccccc" />
 
         <Button
             android:id="@+id/login_btn"

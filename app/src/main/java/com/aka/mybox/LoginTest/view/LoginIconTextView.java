@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 
 import com.aka.mybox.R;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 
@@ -34,14 +35,14 @@ public class LoginIconTextView extends AppCompatTextView {
     private float iconHeight;
 
     public LoginIconTextView(Context context) {
-        super(context, null);
+        this(context, null);
     }
 
-    public LoginIconTextView(Context context, AttributeSet attrs) {
-        super(context, attrs, 0);
+    public LoginIconTextView(Context context, @Nullable AttributeSet attrs) {
+        this(context, attrs, 0);
     }
 
-    public LoginIconTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LoginIconTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
         if (attrs != null) {
@@ -52,8 +53,8 @@ public class LoginIconTextView extends AppCompatTextView {
                 iconTop = array.getResourceId(R.styleable.LoginIconTextView_top, 0);
                 iconBottom = array.getResourceId(R.styleable.LoginIconTextView_bottom, 0);
 
-                iconWidth = array.getResourceId(R.styleable.LoginIconTextView_Width, 30);
-                iconHeight = array.getResourceId(R.styleable.LoginIconTextView_Height, 30);
+                iconWidth = array.getResourceId(R.styleable.LoginIconTextView_Width, 500);
+                iconHeight = array.getResourceId(R.styleable.LoginIconTextView_Height, 100);
             } finally {
                 if (array != null) {
                     array.recycle();

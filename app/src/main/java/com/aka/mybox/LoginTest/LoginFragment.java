@@ -47,7 +47,7 @@ public class LoginFragment extends BaseFragment implements KeyboardWatcher
     @BindView(R.id.login_password_show)
     ImageView show_password;
     @BindView(R.id.login_btn)
-    Button btn_lgoin;
+    Button btn_login;
     @BindView(R.id.forget_password)
     TextView forget_password;
     @BindView(R.id.login_body)
@@ -76,6 +76,7 @@ public class LoginFragment extends BaseFragment implements KeyboardWatcher
 
     @Override
     protected void initView() {
+
     }
 
     @Override
