@@ -1,6 +1,7 @@
 package com.aka.mybox.LoginTest;
 
 import com.aka.mvp.MvpPresenter;
+import com.aka.mybox.LoginTest.view.ILoginView;
 import com.aka.mybox.core.GlobalConstants;
 import com.aka.mybox.core.net.RHttpCallbcak;
 import com.aka.mybox.utils.LogUtils;

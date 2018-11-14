@@ -1,4 +1,4 @@
-package com.aka.mybox.LoginTest;
+package com.aka.mybox.LoginTest.view;
 
 import com.aka.mvp.MvpView;
 
@@ -7,6 +7,7 @@ import com.aka.mvp.MvpView;
  * 登录View
  */
 public interface ILoginView extends MvpView {
+
     /**
      * 额外方法显示吐司
      *

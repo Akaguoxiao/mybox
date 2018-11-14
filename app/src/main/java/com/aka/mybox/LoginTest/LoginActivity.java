@@ -1,89 +1,94 @@
 package com.aka.mybox.LoginTest;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 
 import com.aka.mvp.root.IMvpPresenter;
 import com.aka.mybox.R;
-import com.aka.mybox.core.RLoadingDialog;
-import com.aka.mybox.core.base.BaseActivity;
-import com.aka.mybox.utils.ToastUtils;
+import com.aka.mybox.core.base.BaseFragmentActivity;
 
-import butterknife.BindView;
-import butterknife.OnClick;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-public class LoginActivity extends BaseActivity implements ILoginView {
-    @BindView(R.id.login_username)
-    EditText etUserName;
-    @BindView(R.id.login_password)
-    EditText etPassword;
+public class LoginActivity extends BaseFragmentActivity {
+    private FragmentManager manager;
+    private static Class<?> mCls;
+    private Fragment target;
 
-    private LoginPresenter mLoginPresenter = new LoginPresenter(this);
-    private RLoadingDialog mLoadingDialog;
 
     @Override
     protected int getContentViewId() {
-        return R.layout.activity_login;
+        return R.layout.activity_load_fragment;
     }
 
     @Override
     protected void initBundleData() {
+
     }
 
     @Override
     protected void initView() {
-        mLoadingDialog = new RLoadingDialog(this, true);
+
     }
 
     @Override
     protected void initData() {
-    }
-
-    @OnClick(R.id.login_btn)
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.login_btn:
-                String userName = etUserName.getText()
-                        .toString();
-                String password = etPassword.getText()
-                        .toString();
-                if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)) {
-                    return;
-                }
-                mLoginPresenter.login(userName, password);
-                break;
+        manager = getSupportFragmentManager();
+        if (mCls == null) {
+            return;
+        }
+        try {
+            target = (Fragment) mCls.newInstance();
+            target.setArguments(getIntent().getExtras());
+            switchContent(target);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
         }
     }
 
+    /**
+     * 打开Fragment
+     *
+     * @param context
+     * @param target
+     * @param bundle
+     */
+    public static void lunchFragment(Context context, Class<?> target, Bundle bundle) {
+        mCls = target;
+        Intent intent = new Intent(context, LoginActivity.class);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        context.startActivity(intent);
+    }
+
+    private Fragment current;
+
+    /**
+     * 切换当前显示的fragment
+     */
+    public void switchContent(Fragment to) {
+        if (current != to) {
+            FragmentTransaction transaction = manager.beginTransaction();
+
+            if (current != null) {
+                transaction.hide(current);
+            }
+            if (!to.isAdded()) { // 先判断是否被add过
+                transaction.add(R.id.login_fragment, to).commit();
+            } else {
+
+                transaction.show(to).commit(); // 隐藏当前的fragment，显示下一个
+            }
+            current = to;
+        }
+    }
     @Override
     protected IMvpPresenter[] getPresenterArray() {
-        return new IMvpPresenter[]{mLoginPresenter};
-    }
-
-    @Override
-    public void showToast(String msg) {
-        ToastUtils.showToast(mContxet, msg);
-    }
-
-    @Override
-    public void mvpLoading(String action, boolean show) {
-        if (show) {
-            mLoadingDialog.show();
-        } else {
-            mLoadingDialog.dismiss();
-        }
-    }
-
-    @Override
-    public <M> void mvpShowData(String action, M data) {
-        if (data == null) return;
-        UserBean bean = (UserBean) data;
-        showToast(bean.getUid());
-    }
-
-    @Override
-    public void mvpError(String action, int code, String msg) {
-        showToast(msg);
+        return new IMvpPresenter[0];
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="LoginIconTextView">
+        <attr name="left" format="reference|integer" />
+        <attr name="right" format="reference|integer" />
+        <attr name="top" format="reference|integer" />
+        <attr name="bottom" format="reference|integer" />
+        <attr name="Width" format="dimension" />
+        <attr name="Height" format="dimension" />
+    </declare-styleable>
+
+</resources>

@@ -7,6 +7,7 @@ import android.view.View;
 import com.aka.http.RHttp;
 import com.aka.mvp.root.IMvpPresenter;
 import com.aka.mybox.LoginTest.LoginActivity;
+import com.aka.mybox.LoginTest.LoginFragment;
 import com.aka.mybox.Sample.SampleActivity;
 import com.aka.mybox.core.base.BaseActivity;
 import com.aka.mybox.utils.LogUtils;
@@ -52,8 +53,7 @@ public class MainActivity extends BaseActivity {
         Intent intent;
         switch (v.getId()) {
             case R.id.main_login:
-                intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
+                LoginActivity.lunchFragment(this, LoginFragment.class, null);
                 break;
             case R.id.sample:
                 intent = new Intent(this, SampleActivity.class);

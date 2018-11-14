@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Mybox</string>
-    <string name="login">用户登录</string>
+    <string name="login">欢迎登录</string>
+    <string name="login_user">报上名来</string>
+    <string name="login_pass">通关密语</string>
+    <string name="login_btn">芝麻开门</string>
+    <string name="login_forget_pwd">忘记密码</string>
+
     <string name="net_test">网络请求测试</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sample">SampleActivity</string>
@@ -18,5 +23,6 @@
     <string name="page_init">第1页</string>
     <string name="page_with_number">第%d页</string>
     <string name="title_activity_gank">GankActivity</string>
+
 
 </resources>
