@@ -6,8 +6,7 @@ import android.view.View;
 
 import com.aka.http.RHttp;
 import com.aka.mvp.root.IMvpPresenter;
-import com.aka.mybox.LoginTest.LoginActivity;
-import com.aka.mybox.LoginTest.LoginFragment;
+import com.aka.mybox.Login.LoginActivity;
 import com.aka.mybox.Sample.SampleActivity;
 import com.aka.mybox.core.base.BaseActivity;
 import com.aka.mybox.utils.LogUtils;
@@ -19,7 +18,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends BaseActivity {
     /*http请求基础路径*/
-    public static final String BASE_API = "http://10.0.46.159/";
+    public static final String BASE_API = "http://10.0.46.159/mybox";
 
     @Override
     protected int getContentViewId() {
@@ -53,7 +52,8 @@ public class MainActivity extends BaseActivity {
         Intent intent;
         switch (v.getId()) {
             case R.id.main_login:
-                LoginActivity.lunchFragment(this, LoginFragment.class, null);
+                intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
                 break;
             case R.id.sample:
                 intent = new Intent(this, SampleActivity.class);

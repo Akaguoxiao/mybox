@@ -1,1 +1,1 @@
-include ':app', ':rhttp', ':mvp', ':login'
+include ':app', ':rhttp', ':mvp'

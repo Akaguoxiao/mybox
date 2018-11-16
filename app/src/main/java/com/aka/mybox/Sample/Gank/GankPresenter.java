@@ -2,6 +2,7 @@ package com.aka.mybox.Sample.Gank;
 
 import com.aka.mvp.MvpPresenter;
 import com.aka.mybox.Sample.Gank.modle.GankBean;
+import com.aka.mybox.Sample.Gank.modle.GankBuss;
 import com.aka.mybox.Sample.Gank.modle.GankHttpCallBack;
 import com.aka.mybox.core.GlobalConstants;
 import com.aka.mybox.utils.LogUtils;

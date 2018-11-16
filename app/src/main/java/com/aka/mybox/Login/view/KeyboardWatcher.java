@@ -1,4 +1,4 @@
-package com.aka.mybox.LoginTest.view;
+package com.aka.mybox.Login.view;
 
 import android.app.Activity;
 import android.graphics.Rect;

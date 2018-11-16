@@ -1,12 +1,12 @@
-package com.aka.mybox.LoginTest;
+package com.aka.mybox.Login;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -16,12 +16,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aka.mvp.root.IMvpPresenter;
-import com.aka.mybox.LoginTest.view.ILoginView;
-import com.aka.mybox.LoginTest.view.KeyboardWatcher;
-import com.aka.mybox.LoginTest.view.LoginIconTextView;
+import com.aka.mybox.Login.modle.UserBean;
+import com.aka.mybox.Login.view.ILoginView;
+import com.aka.mybox.Login.view.KeyboardWatcher;
+import com.aka.mybox.Login.view.LoginIconTextView;
+import com.aka.mybox.MainActivity;
 import com.aka.mybox.R;
-import com.aka.mybox.core.base.BaseFragment;
+import com.aka.mybox.core.base.BaseActivity;
 import com.aka.mybox.utils.LogUtils;
+import com.aka.mybox.utils.SharedPreferenceUtils;
 import com.aka.mybox.utils.ToastUtils;
 
 import butterknife.BindView;
@@ -32,7 +35,7 @@ import butterknife.OnTextChanged;
  * Created by Aka on 2018/11/14
  * 登录页面
  */
-public class LoginFragment extends BaseFragment implements KeyboardWatcher
+public class LoginActivity extends BaseActivity implements KeyboardWatcher
         .SoftKeyboardStateListener, ILoginView {
     @BindView(R.id.login_logo)
     LoginIconTextView logo;
@@ -66,11 +69,6 @@ public class LoginFragment extends BaseFragment implements KeyboardWatcher
 
 
     @Override
-    protected View getContentView() {
-        return LayoutInflater.from(mContext).inflate(R.layout.activity_login, null);
-    }
-
-    @Override
     protected void initBundleData() {
     }
 
@@ -81,18 +79,18 @@ public class LoginFragment extends BaseFragment implements KeyboardWatcher
 
     @Override
     protected void initData() {
-        keyboardWatcher = new KeyboardWatcher(getActivity().findViewById(Window
+        keyboardWatcher = new KeyboardWatcher(findViewById(Window
                 .ID_ANDROID_CONTENT));
         keyboardWatcher.addSoftKeyboardStateListener(this);
         screenHeight = getResources().getDisplayMetrics().heightPixels;//获取屏幕高度
     }
 
     @OnClick({R.id.login_close, R.id.login_username_clean, R.id.login_password_clean, R.id
-            .login_password_show})
+            .login_password_show, R.id.login_btn})
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_close:
-                getActivity().finish();
+                finish();
                 break;
             case R.id.login_username_clean:
                 //清除用户名
@@ -116,6 +114,18 @@ public class LoginFragment extends BaseFragment implements KeyboardWatcher
                 }
                 String pwd = et_password.getText().toString();
                 if (!TextUtils.isEmpty(pwd)) et_password.setSelection(pwd.length());
+                break;
+            case R.id.login_btn:
+                String username = et_username.getText().toString().trim();
+                String password = et_password.getText().toString().trim();
+                if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+                    ToastUtils.showToast(this, getString(R.string.login_input_error));
+                    break;
+                }
+                //小tip，保存用户名，方便操作
+                SharedPreferenceUtils helper = new SharedPreferenceUtils(this, "user");
+                helper.putValues(new SharedPreferenceUtils.ContentValue("userName", username));
+                mLoginPresenter.login(username, password);
                 break;
             default:
                 break;
@@ -151,13 +161,20 @@ public class LoginFragment extends BaseFragment implements KeyboardWatcher
 
     }
 
+    //登录成功
     @Override
     public <M> void mvpShowData(String action, M data) {
-
+        if (data != null) {
+            UserBean bean = (UserBean) data;
+            String token = bean.getToken();
+            mLoginPresenter.saveUser(this, token);
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
     }
 
     @Override
     public void mvpError(String action, int code, String msg) {
+        showToast(msg);
 
     }
 
@@ -248,13 +265,18 @@ public class LoginFragment extends BaseFragment implements KeyboardWatcher
     }
 
     @Override
+    protected int getContentViewId() {
+        return R.layout.activity_login;
+    }
+
+    @Override
     protected IMvpPresenter[] getPresenterArray() {
         return new IMvpPresenter[]{mLoginPresenter};
     }
 
     @Override
     public void showToast(String msg) {
-        ToastUtils.showToast(mContext, msg);
+        ToastUtils.showToast(this, msg);
     }
 
 }

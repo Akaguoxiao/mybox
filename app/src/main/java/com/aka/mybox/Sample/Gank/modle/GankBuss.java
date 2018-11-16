@@ -1,4 +1,4 @@
-package com.aka.mybox.Sample.Gank;
+package com.aka.mybox.Sample.Gank.modle;
 
 import com.aka.http.RHttp;
 import com.aka.http.callback.HttpCallback;

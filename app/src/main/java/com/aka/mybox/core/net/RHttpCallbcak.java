@@ -25,7 +25,7 @@ public abstract class RHttpCallbcak<T> extends HttpCallback<T> {
         String msg = response.getMsg();
         JsonElement result = response.getResult();
         switch (code) {
-            case 101://token过期，跳转登录页面重新登录(示例)
+            case 401://token过期，跳转登录页面重新登录
                 break;
             case 102://系统公告(示例)
                 break;
