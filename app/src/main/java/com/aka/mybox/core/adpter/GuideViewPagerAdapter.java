@@ -32,12 +32,15 @@ public class GuideViewPagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
+        if (data == null) return null;
         container.addView(data.get(position));
         return data.get(position);
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView(data.get(position));
+        if (data != null) {
+            container.removeView(data.get(position));
+        }
     }
 }

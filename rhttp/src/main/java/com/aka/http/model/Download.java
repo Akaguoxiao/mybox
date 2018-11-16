@@ -20,6 +20,7 @@ import java.io.Serializable;
 @Table("download")
 public class Download implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @PrimaryKey(AssignType.AUTO_INCREMENT)
     @Column("_id")
     private long id;

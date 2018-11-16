@@ -51,7 +51,11 @@ public class ResponseUtils {
             try {
                 //创建文件夹
                 if (!file.getParentFile().exists()) {
-                    file.getParentFile().mkdirs();
+                    boolean mkdirs = file.getParentFile().mkdirs();
+                    if (!mkdirs) {
+                        LogUtils.e("mkdirs false!");
+                        return;
+                    }
                 }
                 //初始化
                 inputStream = responseBody.byteStream();

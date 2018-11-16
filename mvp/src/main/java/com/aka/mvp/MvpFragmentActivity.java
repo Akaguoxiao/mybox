@@ -9,8 +9,6 @@ import com.aka.mvp.root.IMvpPresenter;
 import com.aka.mvp.root.IMvpView;
 import com.trello.rxlifecycle3.components.support.RxFragmentActivity;
 
-import androidx.annotation.NonNull;
-
 /**
  * Created by Aka on 2018/11/8
  * MvpFragmentActivity
@@ -47,7 +45,7 @@ public abstract class MvpFragmentActivity<V extends IMvpView, P extends IMvpPres
         return view;
     }
 
-    @NonNull
+
     protected ActivityMvpDelegate<V, P> getMvpDelegate() {
         if (mvpDelegate == null) {
             mvpDelegate = new ActivityMvpDelegateImpl(this, this);

@@ -19,7 +19,7 @@ public class LoginBuss extends BaseBuss {
     /**
      * 登录api
      */
-    private final String API_LOGIN = "app/login";
+    private static final String API_LOGIN = "app/login";
 
     /**
      * 用户登录

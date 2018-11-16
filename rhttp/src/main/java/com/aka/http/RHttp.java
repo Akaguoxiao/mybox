@@ -562,7 +562,7 @@ public class RHttp {
             }
             if (fileList != null && fileList.size() > 0) {
                 for (File file : fileList) {
-                    fileMap.put(new String(key), file);
+                    fileMap.put(key, file);
                 }
             }
             return this;

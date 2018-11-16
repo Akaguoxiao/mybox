@@ -9,8 +9,6 @@ import com.aka.mvp.root.IMvpPresenter;
 import com.aka.mvp.root.IMvpView;
 import com.trello.rxlifecycle3.components.RxActivity;
 
-import androidx.annotation.NonNull;
-
 /**
  * Created by Aka on 2018/11/8
  * 1、XXActivity继承MvpActivity,当页面存在Presenter时，具体Activity需要调用setPresenter(P... presenter)
@@ -47,7 +45,7 @@ public abstract class MvpActivity<V extends IMvpView, P extends IMvpPresenter<V>
         return view;
     }
 
-    @NonNull
+
     protected ActivityMvpDelegate<V, P> getMvpDelegate() {
         if (mvpDelegate == null) {
             mvpDelegate = new ActivityMvpDelegateImpl(this, this);

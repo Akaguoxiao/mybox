@@ -10,7 +10,6 @@ import com.aka.mvp.delegate.MvpDelegateCallback;
 import com.aka.mvp.root.IMvpPresenter;
 import com.aka.mvp.root.IMvpView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
@@ -49,7 +48,7 @@ public abstract class MvpFragment<V extends IMvpView, P extends IMvpPresenter<V>
         return view;
     }
 
-    @NonNull
+
     protected FragmentMvpDelegate<V, P> getMvpDelegate() {
         if (mvpDelegate == null) {
             mvpDelegate = new FragmentMvpDelegateImpl(this, this);

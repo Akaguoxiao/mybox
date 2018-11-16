@@ -15,7 +15,7 @@ public class GankBuss extends BaseBuss {
     /**
      * map功能资源API
      */
-    private final String BASE_URL = "http://gank.io/api/";
+    private static final String BASE_URL = "http://gank.io/api/";
     //private final String API_MAP_GANK = "data/福利/{number}/{page}";
 
 

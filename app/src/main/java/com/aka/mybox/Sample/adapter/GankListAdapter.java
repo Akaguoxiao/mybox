@@ -23,9 +23,10 @@ import butterknife.ButterKnife;
 public class GankListAdapter extends RecyclerView.Adapter {
     List<GankBean> gankBeans;
 
-    @NonNull
+
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (parent == null) return null;
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.grid_item, parent, false);
         return new DebounceViewHolder(view);
@@ -35,10 +36,12 @@ public class GankListAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         DebounceViewHolder debounceViewHolder = (DebounceViewHolder) holder;
         GankBean gankBean = gankBeans.get(position);
-        Glide.with(holder.itemView.getContext())
-                .load(gankBean.getUrl())
-                .into(debounceViewHolder.imageIv);
-        debounceViewHolder.descriptionTx.setText(gankBean.getDesc());
+        if (gankBean != null) {
+            Glide.with(holder.itemView.getContext())
+                    .load(gankBean.getUrl())
+                    .into(debounceViewHolder.imageIv);
+            debounceViewHolder.descriptionTx.setText(gankBean.getDesc());
+        }
     }
 
     @Override
