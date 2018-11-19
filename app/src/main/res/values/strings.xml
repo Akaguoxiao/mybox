@@ -5,6 +5,8 @@
     <string name="login_user">报上名来</string>
     <string name="login_pass">通关密语</string>
     <string name="login_input_error">账号密码不能为空！</string>
+    <string name="login_error">账号密码错误！</string>
+
     <string name="login_btn">芝麻开门</string>
     <string name="login_forget_pwd">忘记密码</string>
 

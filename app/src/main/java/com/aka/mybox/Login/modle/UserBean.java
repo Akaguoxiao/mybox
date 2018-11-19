@@ -24,7 +24,9 @@ public class UserBean implements Serializable {
         username = userName;
         this.password = password;
         mobile = "123456";//服务器默认123456
+        token = "aaaaaaa";//假设有token
     }
+
 
     public String getToken() {
         return token;
